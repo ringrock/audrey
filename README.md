@@ -41,6 +41,8 @@ cat .env | jq -R '. | capture("(?<name>[A-Z_]+)=(?<value>.*)")' | jq -s '.[].slo
 ```
 
 ## Deploy the app
+### Note: Deployment from Azure OpenAI Chat Playground
+Your manually-deployed apps can be updated from the Azure OpenAI Chat Playground as well. The update will change all of the app settings to match the current chat playground state, without overwriting the code currently running in the app. To enable updates from the playground, ensure that your app has a resource tag named **ProjectType** with value **aoai-your-data-service**.
 
 ### Deploy with Azure Developer CLI
 Please see [README_azd.md](./README_azd.md) for detailed instructions.
