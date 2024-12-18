@@ -44,8 +44,8 @@ class _UiSettings(BaseSettings):
     title: str = "Audrey"
     logo: Optional[str] = None
     chat_logo: Optional[str] = None
-    chat_title: str = "Hi!"
-    chat_description: str = "I'm Audrey and I'm ready to chat!"
+    chat_title: str = "Hi! I'm Audrey"
+    chat_description: str = "Leave it to me: I’m always top banana in the shock department."
     favicon: str = "/favicon.ico"
     show_share_button: bool = True
     show_chat_history_button: bool = True
