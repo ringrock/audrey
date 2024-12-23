@@ -191,7 +191,7 @@ const Chat = () => {
     const userMessage: ChatMessage = {
       id: uuid(),
       role: 'user',
-      content: "My name is Roger " + (questionContent as string),
+      content: questionContent as string,
       date: new Date().toISOString()
     }
 
