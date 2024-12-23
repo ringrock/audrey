@@ -34,11 +34,11 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
 
   const getCurrentDateTimeString = (): string => {
     const now = new Date();
-    return `current date: ${now.toLocaleString()}`;
+    return `My name is Roger and the current date is ${now.toLocaleString()}`;
   };
 
   const currentDateTimeString: string = getCurrentDateTimeString();
-  
+
   const convertToBase64 = async (file: Blob) => {
     try {
       const resizedBase64 = await resizeImage(file, 800, 800);
