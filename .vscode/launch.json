@@ -21,9 +21,9 @@
       "justMyCode": false
     },
     {
-      "type": "chrome",
+      "type": "msedge",
       "request": "launch",
-      "name": "Frontend: Launch Chrome debugger",
+      "name": "Frontend: Launch Edge debugger",
       "url": "http://127.0.0.1:50505",
       "webRoot": "${workspaceFolder}/frontend",
       "smartStep": true

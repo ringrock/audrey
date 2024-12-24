@@ -32,12 +32,12 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
     }
   };
 
-  const getCurrentDateTimeString = (): string => {
-    const now = new Date();
-    return `My name is Roger. The current date is ${now.toLocaleString()}`;
-  };
+  // const getCurrentDateTimeString = (): string => {
+  //   const now = new Date();
+  //   return `My name is Roger. The current date is ${now.toLocaleString()}`;
+  // };
 
-  const currentDateTimeString: string = getCurrentDateTimeString();
+  // const currentDateTimeString: string = getCurrentDateTimeString();
 
   const convertToBase64 = async (file: Blob) => {
     try {
@@ -53,7 +53,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
       return
     }
 
-    const questionTest: ChatMessage["content"] = base64Image ? [{ type: "text", text: question }, { type: "image_url", image_url: { url: base64Image } }] : `${currentDateTimeString} ${question.toString()}`;
+    const questionTest: ChatMessage["content"] = base64Image ? [{ type: "text", text: question }, { type: "image_url", image_url: { url: base64Image } }] : `${question.toString()}`;
 
     if (conversationId && questionTest !== undefined) {
       onSend(questionTest, conversationId)

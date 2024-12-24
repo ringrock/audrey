@@ -188,10 +188,26 @@ const Chat = () => {
     const questionContent = typeof question === 'string' ? question : [{ type: "text", text: question[0].text }, { type: "image_url", image_url: { url: question[1].image_url.url } }]
     question = typeof question !== 'string' && question[0]?.text?.length > 0 ? question[0].text : question
 
+    const getCurrentDateTimeString = (): string => {
+      const now = new Date();
+      return `My name is Roger. The current date is ${now.toLocaleString()}`;
+    };
+  
+    const currentDateTimeString: string = getCurrentDateTimeString();
+
+
     const userMessage: ChatMessage = {
       id: uuid(),
       role: 'user',
-      content: "My name is Roger." + (questionContent as string),
+      content: questionContent as string,
+      date: new Date().toISOString()
+    }
+
+   
+    const firstuserMessage: ChatMessage = {
+      id: uuid(),
+      role: 'user',
+      content: currentDateTimeString + (questionContent as string),
       date: new Date().toISOString()
     }
 
@@ -200,7 +216,7 @@ const Chat = () => {
       conversation = {
         id: conversationId ?? uuid(),
         title: question as string,
-        messages: [userMessage],
+        messages: [firstuserMessage],
         date: new Date().toISOString()
       }
     } else {
