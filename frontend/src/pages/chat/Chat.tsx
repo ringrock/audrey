@@ -188,13 +188,6 @@ const Chat = () => {
     const questionContent = typeof question === 'string' ? question : [{ type: "text", text: question[0].text }, { type: "image_url", image_url: { url: question[1].image_url.url } }]
     question = typeof question !== 'string' && question[0]?.text?.length > 0 ? question[0].text : question
 
-    const getCurrentDateTimeString = (): string => {
-      const now = new Date();
-      return `The current date is ${now.toLocaleString()}`;
-    };
-  
-    const currentDateTimeString: string = getCurrentDateTimeString();
-
 
     const userMessage: ChatMessage = {
       id: uuid(),
