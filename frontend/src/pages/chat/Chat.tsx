@@ -207,7 +207,6 @@ const Chat = () => {
     const firstuserMessage: ChatMessage = {
       id: uuid(),
       role: 'user',
-//      content: currentDateTimeString + " " + (questionContent as string),
       content: (questionContent as string),
       date: new Date().toISOString()
     }
