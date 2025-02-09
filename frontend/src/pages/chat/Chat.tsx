@@ -197,7 +197,8 @@ const Chat = () => {
       date: new Date().toISOString()
     }
 
-   
+// 11:39am 02/09
+    
     const firstuserMessage: ChatMessage = {
       id: uuid(),
       role: 'user',
