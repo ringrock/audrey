@@ -5,6 +5,7 @@ import logging
 import uuid
 import httpx
 import asyncio
+from datetime import datetime
 from quart import (
     Blueprint,
     Quart,
@@ -205,6 +206,10 @@ async def init_cosmosdb_client():
 
     return cosmos_conversation_client
 
+currentDateTime = datetime.now()
+
+appendSysMessage = f" It is {currentDateTime}."
+
 
 def prepare_model_args(request_body, request_headers):
     request_messages = request_body.get("messages", [])
@@ -213,7 +218,8 @@ def prepare_model_args(request_body, request_headers):
         messages = [
             {
                 "role": "system", ## changed from system to user for o1-mini
-                "content": app_settings.azure_openai.system_message
+                ##"content": app_settings.azure_openai.system_message
+                "content": app_settings.azure_openai.system_message + appendSysMessage
             }
         ]
 

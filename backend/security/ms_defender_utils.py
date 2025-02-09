@@ -11,5 +11,8 @@ def get_msdefender_user_json(authenticated_user_details, request_headers, conver
         "SourceRequestHeaders": {header: request_headers[header] for header in header_names if header in request_headers},
         "ConversationId": conversation_id,
         "ApplicationName": application_name,
+        "UserName": authenticated_user_details.get('username'),
+        "EndUserName": authenticated_user_details.get('name'),
+        "user_name" : authenticated_user_details.get('user_name'),
     }
     return json.dumps(user_args)
