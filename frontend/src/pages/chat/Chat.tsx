@@ -190,7 +190,7 @@ const Chat = () => {
 
     const getCurrentDateTimeString = (): string => {
       const now = new Date();
-      return `My name is Roger. The current date is ${now.toLocaleString()}`;
+      return `The current date is ${now.toLocaleString()}`;
     };
   
     const currentDateTimeString: string = getCurrentDateTimeString();
