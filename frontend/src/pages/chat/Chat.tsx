@@ -73,6 +73,7 @@ const Chat = () => {
     subText: errorMsg?.subtitle
   }
 
+  
   const modalProps = {
     titleAriaId: 'labelId',
     subtitleAriaId: 'subTextId',
