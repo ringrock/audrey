@@ -212,7 +212,7 @@ def prepare_model_args(request_body, request_headers):
     if not app_settings.datasource:
         messages = [
             {
-                "role": "system",
+                "role": "system", ## changed from system to user for o1-mini
                 "content": app_settings.azure_openai.system_message
             }
         ]
