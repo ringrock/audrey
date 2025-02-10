@@ -5,6 +5,7 @@ import logging
 import uuid
 import httpx
 import asyncio
+import pytz
 from datetime import datetime
 from quart import (
     Blueprint,
@@ -206,9 +207,11 @@ async def init_cosmosdb_client():
 
     return cosmos_conversation_client
 
-currentDateTime = datetime.now()
+currentDateTime = datetime.now(pytz.utc)
+eastern = pytz.timezone('US/Eastern')
+currentDateTimeEastern = currentDateTime.astimezone(eastern)
 
-appendSysMessage = f" It is {currentDateTime}."
+appendSysMessage = f" It is {currentDateTimeEastern}."
 
 
 def prepare_model_args(request_body, request_headers):
