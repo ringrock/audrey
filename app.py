@@ -206,7 +206,7 @@ async def init_cosmosdb_client():
 
     return cosmos_conversation_client
 
-currentDateTime = datetime.now
+currentDateTime = datetime.now()
 
 appendSysMessage = f" It is {currentDateTime}."
 
