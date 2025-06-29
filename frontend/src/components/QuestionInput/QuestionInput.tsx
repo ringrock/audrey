@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+limport { useContext, useState } from 'react'
 import { FontIcon, Stack, TextField } from '@fluentui/react'
 import { SendRegular } from '@fluentui/react-icons'
 
@@ -80,7 +80,7 @@ export const QuestionInput = ({ onSend, disabled, placeholder, clearOnSend, conv
         className={styles.questionInputTextArea}
         placeholder={placeholder}
         multiline
-        resizable={true}
+        resizable={vertical}
         borderless
         value={question}
         onChange={onQuestionChange}
